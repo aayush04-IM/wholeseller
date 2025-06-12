@@ -53,10 +53,11 @@ WSGI_APPLICATION = 'wholeseller.wsgi.application'
 
 # Database config using environment variable (Render provides this)
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
-}
+import os
 
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+}
 # Password validation
 AUTH_PASSWORD_VALIDATORS = []
 
