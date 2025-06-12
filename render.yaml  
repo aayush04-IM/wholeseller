@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: wholeseller-backend
+    env: python
+    buildCommand: ""
+    startCommand: bash start.sh
+    repo: https://github.com/aayush04-IM/wholeseller
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
